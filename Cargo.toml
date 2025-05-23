@@ -1,3 +1,9 @@
+# On Linux:
+# - Ubuntu, `sudo apt-get install lld clang`
+# - Arch, `sudo pacman -S lld clang`
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "linker=mold", "-C", "link-arg=-fuse-ld=lld"]
+
 [package]
 name = "zero2prod"
 version = "0.1.0"
